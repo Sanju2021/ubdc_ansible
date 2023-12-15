@@ -1,4 +1,40 @@
-172.20.67.48
+172.20.67.48 [linux-test-vm on MC4 Desktop 22.04.3 LTS]
 172.20.67.69
 172.20.67.126
-172.20.67.70
+172.20.67.47 [web-datasci on MC4 16.04.6 LTS}
+[DataBase Servers]
+
+[Web Servers]
+
+
+[NFS File Servers]
+
+
+[Ubuntu SSD Machines]
+172.20.67.48 [linux-test-vm on MC4 Desktop 22.04.3 LTS]
+
+
+
+
+130.209.67.113 [web-expo on MC4 20.04.6 LTS]
+130.209.67.114 [web-dashboard]
+130.209.67.115 [web-api on MC4 20.04.6 LTS]
+130.209.67.116 [web-transfer on MC4 20.04.3 LTS]
+130.209.67.117 [ubdc-wpdsys]
+130.209.67.118 [ubdc-wpdtwitter]
+130.209.67.119 [web-vhostone on MC4 20.04.6 LTS]
+
+172.20.67.43	[db-datasci on MC3 18.04.6 LTS]
+172.20.67.101	[DSP-APIHOSTONE on MC3 20.04.1 LTS]
+172.20.67.114	[web-dashboard on MC3 20.04.6 LTS]
+172.20.67.52	[web-vhosttwo on MC3 20.04.4 LTS]
+172.20.67.55 [gis-datasci on MC4 20.04.6 LTS]
+172.20.67.56 [db-aux on MC4 20.04.6 LTS]
+172.20.67.59 [db-reserver on MC4 20.04.6 LTS]
+
+172.20.67.57  [db-research on MC5 20.04.6 LTS]
+
+
+130.20.67.109 [luis dell computer at Lilibank Desktop 22.04.03 LTS]
+130.20.67.75 [Maralbek dell computer Lilibank Desktop 18.04.6 LTS]
+
