@@ -1,0 +1,37 @@
+---
+- name: Install Checkmk
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure dependencies are installed
+      apt:
+        name:
+          - wget
+          - gnupg
+        state: present
+        update_cache: yes
+
+    - name: Download Checkmk package
+      command: wget https://download.checkmk.com/checkmk/2.1.0/check-mk-raw-2.1.0p1_0.buster_amd64.deb -O /tmp/check-mk-raw-2.1.0p1_0.buster_amd64.deb
+      args:
+        creates: /tmp/check-mk-raw-2.1.0p1_0.buster_amd64.deb
+
+    - name: Install Checkmk package
+      apt:
+        deb: /tmp/check-mk-raw-2.1.0p1_0.buster_amd64.deb
+        state: present
+
+    - name: Create a Checkmk site
+      command: omd create mysite
+      args:
+        creates: /opt/omd/sites/mysite
+
+    - name: Start the Checkmk site
+      command: omd start mysite
+
+    - name: Ensure Checkmk site starts on boot
+      command: omd enable mysite
+
+    - name: Display site URL
+      debug:
+        msg: "Checkmk site is available at http://{{ ansible_facts['default_ipv4']['address'] }}/mysite/"
