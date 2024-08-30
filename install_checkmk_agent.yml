@@ -1,0 +1,19 @@
+---
+- name: Install Checkmk Agent
+  hosts: all  # Define the hosts on which you want to install the Checkmk agent
+  become: yes  # Run commands with sudo/root privileges
+  vars:
+    checkmk_agent_url: "http://130.209.67.250/check_mk/agents/check-mk-agent_2.3.0-1.deb"  # URL to the Checkmk agent package for Debian-based systems
+    
+  tasks:
+    - name: Install Checkmk agent on Debian-based systems
+      apt:
+        deb: "{{ checkmk_agent_url }}"
+      when: ansible_os_family == "Debian"
+
+    - name: Ensure Checkmk agent service is running and enabled (Debian)
+      service:
+        name: check-mk-agent
+        state: started
+        enabled: yes
+      when: ansible_os_family == "Debian"
